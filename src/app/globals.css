@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --success: #10b981;
+  --muted: #64748b;
+  --muted-bg: #f1f5f9;
+  --accent: #f59e0b;
+}
+
+.dark-theme {
+  --background: #09090b;
+  --foreground: #f4f4f5;
+  --card-bg: #18181b;
+  --card-border: #27272a;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --success: #10b981;
+  --muted: #8e9cae;
+  --muted-bg: #27272a;
+  --accent: #fbbf24;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Clean, trustworthy surface styling */
+.fintech-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+}
+
+/* Dynamic Brand Borders for subtle fintech tagging */
+.brand-hsbc {
+  border-left: 4px solid #ef4444;
+}
+.brand-uob {
+  border-left: 4px solid #1e3a8a;
+}
+.brand-dbs {
+  border-left: 4px solid #f97316;
+}
+.brand-permata {
+  border-left: 4px solid #0d9488;
+}
+.brand-mayapada {
+  border-left: 4px solid #6366f1;
+}
+.brand-ocbc {
+  border-left: 4px solid #ec4899;
+}
+.brand-bri {
+  border-left: 4px solid #06b6d4;
+}
+
+/* Custom animated cursor typing effect for Gemini streaming */
+.typing::after {
+  content: '▋';
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { color: transparent }
+  50% { color: var(--primary) }
+}
